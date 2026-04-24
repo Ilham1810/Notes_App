@@ -1,12 +1,24 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import LoginPage from "./pages/LoginPage.js";
-import NotesPage from "./pages/NotesPage.js";
-import RegisterPage from "./pages/RegisterPage.js";
-import { useState } from "react";
+import LoginPage from "./pages/LoginPage";
+import NotesPage from "./pages/NotesPage";
+import RegisterPage from "./pages/RegisterPage";
+import { useState, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
+
+  // HANDLE TOKEN DARI GOOGLE 
+  // useEffect(() => {
+  //   const params = new URLSearchParams(window.location.search);
+  //   const newToken = params.get("token");
+
+  //   if (newToken) {
+  //     localStorage.setItem("token", newToken);
+  //     setToken(newToken);
+  //     window.location.href = "/notes";
+  //   }
+  // }, []);
 
   return (
     <>
@@ -15,20 +27,33 @@ function App() {
         toastOptions={{
           duration: 3000,
           style: {
-            borderRadius: "16px",
-            background: "#111827",
-            color: "#fff",
+            borderRadius: "18px",
             fontSize: "18px",
-            padding: "16px 24px",
+            padding: "18px 26px",
+            minWidth: "320px",
             fontWeight: "600",
             textAlign: "center",
-            minWidth: "300px",
+            boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
+          },
+          success: {
+            style: {
+              background: "#16a34a",
+              color: "#fff",
+            },
+          },
+          error: {
+            style: {
+              background: "#dc2626",
+              color: "#fff",
+            },
           },
         }}
       />
 
+      {/* ROUTER */}
       <BrowserRouter>
         <Routes>
+
           {/* LOGIN */}
           <Route
             path="/"
@@ -44,7 +69,7 @@ function App() {
           {/* REGISTER */}
           <Route path="/register" element={<RegisterPage />} />
 
-          {/* NOTES (PROTECTED) */}
+          {/* NOTES */}
           <Route
             path="/notes"
             element={
@@ -55,6 +80,7 @@ function App() {
               )
             }
           />
+
         </Routes>
       </BrowserRouter>
     </>

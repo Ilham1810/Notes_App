@@ -14,12 +14,12 @@ function RegisterPage() {
     try {
       await api.post("/register", { name, email, password });
 
-      toast.success("Register berhasil 🎉");
+      toast.success("Register berhasil");
 
       navigate("/");
     } catch (err) {
       console.log(err.response);
-      toast.error("Register gagal ❌");
+      toast.error("Register gagal");
     }
   };
 

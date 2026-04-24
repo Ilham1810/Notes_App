@@ -17,11 +17,11 @@ function LoginPage({ setToken }) {
 
       setToken(res.data.token);
 
-      toast.success("Login berhasil 🎉");
+      toast.success("Login berhasil");
 
       navigate("/notes");
     } catch (err) {
-      toast.error("Email atau password salah ❌");
+      toast.error("Email atau password salah");
     }
   };
 
