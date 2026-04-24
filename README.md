@@ -1,35 +1,35 @@
 # 📝 Fullstack Notes App
 
-A simple fullstack notes application built with:
+A modern fullstack notes application built with **React + Laravel API**.
 
-- React (Frontend)
-- Laravel (Backend API)
-- Tailwind CSS (UI)
+✨ Clean UI, authentication, dark mode, and real-time search.
+
+---
 
 ## 🚀 Features
 
-- Register & Login
-- CRUD Notes
-- Dark Mode
-- Search Notes
+- 🔐 Authentication (Login & Register)
+- 📝 CRUD Notes (Create, Read, Update, Delete)
+- 🌙 Dark Mode (Auto detect + toggle)
+- 🔍 Search Notes
+- 🎨 Modern UI (Tailwind CSS)
 
-## 🧱 Structure
+---
 
-notes-client → React app  
-notes-api → Laravel API  
-
-## ⚙️ Setup
-
-### Backend
-cd notes-api  
-composer install  
-php artisan migrate  
-php artisan serve  
+## 🛠️ Tech Stack
 
 ### Frontend
-cd notes-client  
-npm install  
-npm start  
+- ⚛️ React
+- 🎨 Tailwind CSS
+- 🔔 React Hot Toast
+- 🌐 Axios
+
+### Backend
+- 🐘 Laravel
+- 🔐 Laravel Sanctum
+- 🗄️ MySQL
+
+---
 
 ## 📸 Preview
 
@@ -42,6 +42,32 @@ npm start
 ### 🆕 Register Page
 ![Register](screenshots/register.png)
 
-## 👨‍💻 Author
+---
 
-Ilham Ar-rosyid
+## 📂 Project Structure
+notes-app/
+├── notes-client/ # React frontend
+├── notes-api/ # Laravel backend
+├── screenshots/
+│ ├── notes.png
+│ ├── login.png
+│ ├── register.png
+└── README.md
+
+---
+
+## ⚙️ Installation
+
+### 🔧 Backend (Laravel) And Frontend (React)
+
+```bash
+cd notes-api
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+
+cd notes-client
+npm install
+npm start
